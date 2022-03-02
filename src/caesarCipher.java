@@ -15,7 +15,7 @@ public class caesarCipher {
     String alfabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ";
 
     String userinput1;
-    char userinput2;
+
 
     void intro() {
         System.out.print("Encrypt type 1, Decrypt type 2 or exit to exit: ");
@@ -27,9 +27,11 @@ public class caesarCipher {
         if (userinput1.equals("1")) {
             System.out.print("Write text you want encrypted: ");
             userinput1 = in.nextLine().toUpperCase(Locale.ROOT);
-            for (int i = 0; i < alfabet.length(); i++) {
+            for (int i = 0; i < 5; i++) {
                 char chinput = in.next().charAt(0);
-                int indexOfChar = chinput;
+                chinput = Character.toUpperCase(chinput);
+                int indexOfChar = alfabet.indexOf(chinput);
+                System.out.println(indexOfChar);
 
             }
             // bliver encrypted
@@ -45,10 +47,12 @@ public class caesarCipher {
         }
 
         void exit () {
-            userinput1.equals("exit");
+        if (userinput1.equals("exit")){
             yes = false;
             //exit
         }
+
+    }
 
 
 
@@ -57,7 +61,7 @@ public class caesarCipher {
         new caesarCipher().go();
     }
 
-    }
+}
 
 
 
